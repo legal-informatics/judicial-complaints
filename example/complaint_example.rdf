@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY an "http://www.akomantoso.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY norm "http://www.estrellaproject.org/lkif-core/norm.owl#" >
+    <!ENTITY judiciary "http://informatika.ftn.uns.ac.rs/legal/judiciary.owl#" >
+    <!ENTITY legal-case-ontology "http://www.best-project.nl/owl/legal-case-ontology.owl#" >
+    <!ENTITY expression "http://www.estrellaproject.org/lkif-core/expression.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:expression="http://www.estrellaproject.org/lkif-core/expression.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:norm="http://www.estrellaproject.org/lkif-core/norm.owl#"
+     xmlns:an="http://www.akomantoso.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:judiciary="http://informatika.ftn.uns.ac.rs/legal/judiciary.owl#"
+     xmlns:legal-case-ontology="http://www.best-project.nl/owl/legal-case-ontology.owl#">
+    <Ontology rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238">
+        <imports rdf:resource="http://informatika.ftn.uns.ac.rs/legal/judiciary.owl"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238 -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238">
+        <rdf:type rdf:resource="&judiciary;Complaint"/>
+        <judiciary:subjectMatterValue>50000</judiciary:subjectMatterValue>
+        <judiciary:subjectMatter>utvrđivanje prava svojine</judiciary:subjectMatter>
+        <expression:bears rdf:resource="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim1-ownershipTransferRight"/>
+        <expression:bears rdf:resource="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim2-proceedingCostsPayment"/>
+        <legal-case-ontology:plaintiff rdf:resource="&an;ontology/person/rs.MarkoMarkovic.1962-08-17"/>
+        <legal-case-ontology:defendant rdf:resource="&an;ontology/person/rs.StevanGostojic.1968-11-25"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim1-ownershipTransferRight -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim1-ownershipTransferRight">
+        <rdf:type rdf:resource="&judiciary;Claim"/>
+        <rdf:type rdf:resource="&norm;Allowed"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim2-proceedingCostsPayment -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim2-proceedingCostsPayment">
+        <rdf:type rdf:resource="&judiciary;Claim"/>
+        <rdf:type rdf:resource="&norm;Obliged"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact1-defendantHasOwnership -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact1-defendantHasOwnership">
+        <rdf:type rdf:resource="&expression;Fact"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact2-signedContract -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact2-signedContract">
+        <rdf:type rdf:resource="&expression;Fact"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact3-ownershipTransferDisagreement -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact3-ownershipTransferDisagreement">
+        <rdf:type rdf:resource="http://judo.googlecode.com/svn/tunk/Judging_Contracts_Core.owl#Agreement"/>
+        <expression:utterer rdf:resource="&an;ontology/person/rs.MarkoMarkovic.1962-08-17"/>
+    </NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;NegativePropertyAssertion"/>
+        <sourceIndividual rdf:resource="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact3-ownershipTransferDisagreement"/>
+        <targetIndividual rdf:resource="&an;ontology/person/rs.StevanGostojic.1968-11-25"/>
+        <assertionProperty rdf:resource="&expression;utterer"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.akomantoso.org/ontology/object/rs.osns.ov-12345-10 -->
+
+    <NamedIndividual rdf:about="&an;ontology/object/rs.osns.ov-12345-10">
+        <rdf:type rdf:resource="&norm;Contract"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#evid2-contract -->
+
+    <NamedIndividual rdf:about="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#evid2-contract">
+        <rdf:type rdf:resource="&expression;Evidence"/>
+        <rdf:type rdf:resource="&expression;Expression"/>
+        <expression:medium rdf:resource="&an;ontology/object/rs.osns.ov-12345-10"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.akomantoso.org/ontology/person/rs.MarkoMarkovic.1962-08-17 -->
+
+    <NamedIndividual rdf:about="&an;ontology/person/rs.MarkoMarkovic.1962-08-17">
+        <rdf:type rdf:resource="&legal-case-ontology;Plaintiff"/>
+        <rdf:type rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Person"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.akomantoso.org/ontology/person/rs.StevanGostojic.1968-11-25 -->
+
+    <NamedIndividual rdf:about="&an;ontology/person/rs.StevanGostojic.1968-11-25">
+        <rdf:type rdf:resource="&legal-case-ontology;Defendant"/>
+        <rdf:type rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Person"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

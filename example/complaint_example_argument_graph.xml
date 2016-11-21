@@ -1,0 +1,67 @@
+<caf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./caf.xsd">
+<metadata/>
+	<statements>
+		<statement id="stmt1_fact1-defendantHasOwnership">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact1-defendantHasOwnership"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt2_evid1-cadastreExtract">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#evid1-cadastreExtract"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt3_fact2-signedContract">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact2-signedContract"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt4_evid2-contract">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#evid2-contract"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt5_evid3-partiesTestimony">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#evid3-partiesTestimony"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt6_fact3-ownershipTransferDisagreement">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#fact3-ownershipTransferDisagreement"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt7_claim1-ownershipTransferRight" main="true">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim1-ownershipTransferRight"/>
+			<descriptions/>
+		</statement>
+		<statement id="stmt8_claim2-proceedingCostsPayment">
+			<metadata source="http://informatika.ftn.uns.ac.rs/legal/rs/complaint/os-ns/2014/238#claim2-proceedingCostsPayment"/>
+			<descriptions/>
+		</statement>
+	</statements>
+	<arguments>
+		<argument id="arg1_fact1">
+			<conclusion statement="stmt1_fact1-defendantHasOwnership"/>
+			<premises>
+				<premise statement="stmt2_evid1-cadastreExtract"/>
+			</premises>
+		</argument>
+		<argument id="arg2_fact2">
+			<conclusion statement="stmt3_fact2-signedContract"/>
+			<premises>
+				<premise statement="stmt4_evid2-contract"/>
+				<premise statement="stmt5_evid3-partiesTestimony"/>
+			</premises>
+		</argument>
+		<argument id="arg3_claim1">
+			<conclusion statement="stmt7_claim1-ownershipTransferRight"/>
+			<premises>
+				<premise statement="stmt1_fact1-defendantHasOwnership"/>
+				<premise statement="stmt2_evid1-cadastreExtract"/>
+				<premise statement="stmt6_fact3-ownershipTransferDisagreement"/>
+			</premises>
+		</argument>
+		<argument id="arg4_claim2">
+			<conclusion statement="stmt8_claim2-proceedingCostsPayment"/>
+			<premises>
+				<premise statement="stmt7_claim1-ownershipTransferRight"/>
+			</premises>
+		</argument>
+	</arguments>
+	<references/>
+</caf>

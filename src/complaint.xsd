@@ -1,0 +1,122 @@
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://informatika.ftn.uns.ac.rs/legal/complaint/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:an="http://www.akomantoso.org/2.0" targetNamespace="http://informatika.ftn.uns.ac.rs/legal/complaint/0.1">
+	<xsd:import namespace="http://www.akomantoso.org/2.0" schemaLocation="./akomantoso20.xsd"/>
+
+	<xsd:complexType name="akomaNtosoType">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:group ref="documentType"/>
+			</xsd:sequence>
+			<xsd:element ref="an:components" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:group name="documentType">
+		<xsd:choice>
+			<xsd:group ref="an:documentType"/>
+			<xsd:group ref="complaintDocs"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:element name="akomaNtoso" type="akomaNtosoType">
+	</xsd:element>
+	
+	<!-- new elements -->
+	<xsd:group name="complaintDocs">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Group</type>
+				<name>complaintDocs</name>
+				<comment>the group complaintDocs specifies document types such as complaints, etc.</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="complaint"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="complaintStructure">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Complex</type>
+				<name>complaintStructure</name>
+				<comment>the type complaintStructure specifies the overall content model of the document types that describe complaints</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="an:meta"/>
+			<xsd:element ref="an:coverPage" minOccurs="0"/>
+			<xsd:element ref="an:header"/>
+			<xsd:element ref="complaintBody"/>
+			<xsd:element ref="an:conclusions" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="an:attachments" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="contains" type="an:versionType" default="originalVersion"/>
+	</xsd:complexType>
+	<xsd:element name="complaint" type="complaintStructure">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Element</type>
+				<name>complaint</name>
+				<comment>Element complaint is used for descriving the structure and content of a complaint</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="complaintBody">
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:group ref="complaintBlock"/>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="an:coreopt"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:group name="complaintBlock">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Group</type>
+				<name>complaintBlock</name>
+				<comment>The group complaintBlock lists the structures that should be found in a complaint</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element ref="introduction"/>
+			<xsd:element ref="fact"/>
+			<xsd:element ref="evidence"/>
+			<xsd:element ref="claim"/>
+		</xsd:choice>
+	</xsd:group>
+	<!-- argumentation: fact, evidence and claim -->
+	<xsd:element name="introduction" type="an:maincontent">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Element</type>
+				<name>introduction</name>
+				<comment>this element is a structural container for the section of a complaint containing introductory material</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="fact" type="an:maincontent">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Element</type>
+				<name>fact</name>
+				<comment>this element is a structural container for the section of a complaint containing facts</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="evidence" type="an:maincontent">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Element</type>
+				<name>evidence</name>
+				<comment>this element is a structural container for the section of a complaint containing evidence</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="claim" type="an:maincontent">
+		<xsd:annotation>
+			<xsd:documentation>
+				<type>Element</type>
+				<name>evidence</name>
+				<comment>this element is a structural container for the section of a complaint containing claim</comment>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

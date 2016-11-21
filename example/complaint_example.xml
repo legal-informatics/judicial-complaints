@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xsi:schemaLocation="http://informatika.ftn.uns.ac.rs/legal/complaint/0.1 complaint.xsd" xmlns="http://informatika.ftn.uns.ac.rs/legal/complaint/0.1" xmlns:an="http://www.akomantoso.org/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<complaint>
+		<an:meta>
+			<an:identification source="">
+				<an:FRBRWork>
+					<an:FRBRthis value="/rs/complaint/os-ns/2014/238/main"/>
+					<an:FRBRuri value="/rs/complaint/os-ns/2014/238"/>
+					<an:FRBRdate name="Draft" date="2014-05-12"/>
+					<an:FRBRauthor href="#mmarkovic"/>
+				</an:FRBRWork>
+				<an:FRBRExpression>
+					<an:FRBRthis value="/rs/complaint/os-ns/2014/238/srp@/main"/>
+					<an:FRBRuri value="/rs/complaint/os-ns/2014/238/srp@"/>
+					<an:FRBRdate name="final" date="2014-05-12"/>
+					<an:FRBRauthor href="#mmarkovic"/>
+				</an:FRBRExpression>
+				<an:FRBRManifestation>
+					<an:FRBRthis value="/rs/complaint/os-ns/2014/238/srp@/main.xml"/>
+					<an:FRBRuri value="/rs/complaint/os-ns/2014/238/srp@.akn"/>
+					<an:FRBRdate name="XMLConversion" date="2014-05-12"/>
+					<an:FRBRauthor href="#mmarkovic"/>
+				</an:FRBRManifestation>
+			</an:identification>
+			<an:references source="">
+				<an:original id="ro1" href="/rs/complaint/os-ns/2014/238/srp@" showAs="Original"/>
+				<an:TLCOrganization id="osns" href="/ontology/organization/rs.OsnovniSud.NoviSad" showAs="Osnovni sud u Novom Sadu"/>
+				<an:TLCPerson id="mmarkovic" href="/ontology/person/rs.MarkoMarkovic.1962-08-17" showAs="Marko Marković"/>
+				<an:TLCPerson id="sgostojic" href="/ontology/person/rs.StevanGostojic.1968-11-25" showAs="Stevan Gostojić"/>
+				<an:TLCLocation id="novisad" href="/ontology/location/rs.novisad" showAs="Novi Sad"/>
+				<an:TLCRole id="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff"/>
+				<an:TLCRole id="defendant" href="/ontology/role/defendant" showAs="Defendant"/>
+				<an:TLCObject id="ns2.1234-5.1234" href="ontology/object/rs.cadastral.ns2.1234-5.1234" showAs="parcela 1234/5 LN 1234 KO Novi Sad II"/>
+				<an:TLCObject id="ov-12345-10" href="ontology/object/rs.osns.ov-12345-10" showAs="Ov 12345/10"/>
+				<an:TLCConcept id="subjectMatter" href="http://informatika.ftn.uns.ac.rs/legal/judiciary.owl#subjectMatter" showAs="Subject matter"/>
+				<an:TLCConcept id="subjectMatterValue" href="http://informatika.ftn.uns.ac.rs/legal/judiciary.owl#subjectMatterValue" showAs="Subject matter value"/>
+			</an:references>
+		</an:meta>
+		<an:header>
+			<an:p>
+				<an:organization id="org1" refersTo="#osns">Osnovni sud u Novom Sadu</an:organization>
+			</an:p>
+			<an:p>
+				tužilac: <an:party id="party1" refersTo="#mmarkovic" as="#plaintiff">Marko Marković</an:party> iz <an:location id="loc1" refersTo="#novisad">Novog Sada</an:location>
+			</an:p>
+			<an:p>
+				tuženi:  <an:party id="party2" refersTo="#sgostojic" as="#defendant">Stevan Gostojić</an:party> iz <an:location id="loc2" refersTo="#novisad">Novog Sada</an:location>
+			</an:p>
+			<an:p style="text-align: center;">
+				TUŽBA
+			</an:p>
+			<an:p>
+				<an:entity id="entity1" name="ownershipMatter" refersTo="#subjectMatter">radi utvrđivanja prava svojine</an:entity>
+				Vrednost spora: <an:quantity id="quantity1" normalized="100000" refersTo="#subjectMatterValue">100.000,00 dinara</an:quantity>
+			</an:p>
+			<an:p>
+				u dva primerka s dva priloga
+			</an:p>
+		</an:header>
+		<complaintBody>
+			<fact id="fact1-defendantHasOwnership">
+				<an:p>
+					Tuženi je zemljišnoknjižni vlasnik nepokretnosti - parcele br. <an:object id="obj01" refersTo="#ns2.1234-5.1234">1234/5 LN 1234 KO Novi Sad 2</an:object> površine <an:quantity id="quantity2" normalized="510" refersTo="#area">510 m2</an:quantity> s ekonomskom zgradom površine <an:quantity id="quantity3" normalized="70" refersTo="#area">70 m2</an:quantity>.
+				</an:p>
+			</fact>
+			<evidence id="evid1-cadastreExtract" refersTo="#ns2.1234-5.1234">
+				<an:p>
+					Dokaz: izvod iz zemljišne knjige
+				</an:p>
+			</evidence>
+			<fact id="fact2-signedContract">
+				<an:p>
+				Tužilac i tuženi su zaključili pisani kupoprodajni ugovor o prodaji navedene nepokretnosti tužiocu za iznos od <an:quantity id="quantity4" normalized="100000" refersTo="#price">100.000,00 dinara</an:quantity>, koji je tužilac isplatio u celosti. Ugovor o kupoprodaji overili su kod <an:organization id="org2" refersTo="#osns">Osnovnog suda u Novom Sadu</an:organization> dana <an:date date="2010-12-12">12.12.2010.</an:date> pod brojem <an:entity id="ent3" name="contract" refersTo="#ov-12345-10">Ov 12345/10</an:entity>. 
+					</an:p>
+			</fact>
+			<introduction>
+				<an:p>Dokaz:</an:p>
+			</introduction>
+			<evidence id="evid2-contract" refersTo="#ov-12345-10">
+				<an:p>ugovor,</an:p>
+			</evidence>
+			<evidence id="evid3-partiesTestimony">
+				<an:p>saslušanje stranaka</an:p>
+			</evidence>
+			<fact id="fact3-ownershipTransferDisagreement">
+				<an:p>
+					U ugovoru nije bila predviđena klauzula da tuženi, kao prodavac, dozvoljava tužiocu, kao kupcu, da se bez njegovog daljeg pitanja uknjiži u zemljišnim knjigama kao vlasnik, a tuženi ne želi da tužiocu da potrebnu izjavu za uknjižbu.
+				</an:p>
+			</fact>
+			<introduction>
+				<an:p id="statement6">
+					Stoga je kupac-tužilac prinuđen da vodi ovaj spor, te u skladu sa <an:ref id="ref01" href="/rs/act/2005-12-27/115/srp@/main.xml#cl33">članom 33. Zakona o osnovama svojinskopravnih odnosa</an:ref> predlaže da sud nakon izvedenih dokaza donese
+				</an:p>
+				<an:p style="text-align: center;">
+					PRESUDU
+				</an:p>
+			</introduction>
+			<claim id="claim1-ownershipTransferRight">
+				<an:p>
+				Utvrđuje se da je tužilac po osnovu kupoprodajnog ugovora, overenog kod <an:organization id="org3" refersTo="#osns">Osnovnog suda u Novom Sadu</an:organization> dana <an:date date="2010-12-12">12.12.2010. godine</an:date>, pod brojem <an:entity id="ent4" name="contract" refersTo="#ov-12345-10">Ov 12345/10</an:entity>, stekao pravo svojine na kat. parceli br. <an:object id="obj02" refersTo="#ns2.1234-5.1234">1234/5 LN 1234 KO Novi Sad 2</an:object> površine <an:quantity id="quantity5" normalized="510" refersTo="#area">510 m2</an:quantity> na kojoj se nalazi ekonomska zgrada površine <an:quantity id="quantity6" normalized="70" refersTo="#area">70 m2</an:quantity>, što je tuženi dužan da prizna i trpi da tužilac uknjiži u zemljišnim knjigama pravo svojine na opisanim nepokretnostima, a u protivnom će mu ova presuda služiti kao osnov za uknjižbu.
+				</an:p>
+			</claim>
+			<claim id="claim2-proceedingCostsPayment">
+				<an:p>
+					Tuženi je dužan da tužiocu naknadi parnične troškove u iznosu od <an:quantity id="amount3" normalized="32800" refersTo="#price">32.800,00 dinara</an:quantity> dinara u roku od 15 dana. 
+				</an:p>
+			</claim>
+		</complaintBody>
+		<an:conclusions>
+			<an:p>
+				U <an:location id="loc3" refersTo="#novisad">Novom Sadu</an:location>, dana <an:docDate date="2014-05-12">12.05.2014. godine</an:docDate>.
+			</an:p>
+			<an:p>
+				Tužilac
+				<an:party id="party3" refersTo="#mmarkovic" as="#plaintiff">Marko Marković</an:party>
+			</an:p>
+		</an:conclusions>
+	</complaint>
+</akomaNtoso>
